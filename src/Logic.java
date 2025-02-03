@@ -30,6 +30,7 @@ public class Logic {
         System.out.println("(D)onate to an organization");
         System.out.println("(I)nfo of a organization");
         System.out.println("(Y)our points");
+        System.out.println("(S)ell item");
         System.out.print("Enter here: ");
         choice = scan.nextLine();
         choice.toLowerCase();
@@ -49,22 +50,35 @@ public class Logic {
             System.out.println("You found an opportunity for volunteering! ");
             double organizationChance = Math.random();
             foundOrganization = true;
-            if (organizationChance >= 0.99) {
+            if (organizationChance >= 0.66) {
                 current = new Organization("Prospect Park Cleanup");
                 System.out.println("The Organization is Prospect Park Cleanup");
+                current.setHoursRequired(40);
+                String[] items = {"brooms", "water", "trash bags", "rakes"};
+                current.initializeItemsRequired(items);
             }
-            else if (organizationChance >= 0.66) {
+            else if (organizationChance >= 0.33) {
                 current = new Organization("Red Cross");
                 System.out.println("The Organization is Red Cross");
+                current.setHoursRequired(30);
+                String[] items = {"mask", "pipettes", "bandaid", "heartbeat monitor"};
+                current.initializeItemsRequired(items);
             }
             else {
                 current = new Organization("Food Bank for NYC");
                 System.out.println("The Organization is Food Bank for NYC");
+                current.setHoursRequired(20);
+                String[] items = {"canned tomatoes", "pasta", "sushi", "pizza"};
+                current.initializeItemsRequired(items);
             }
         } else {
             System.out.println("The organization is currently not holding any events.");
             System.out.println("Try again or try looking for another organization!");
         }
+    }
+
+    public void donate() {
+
     }
 
 }

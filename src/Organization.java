@@ -1,12 +1,14 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Organization {
     private boolean PlaytimeForCharity;
     private boolean ServiceSquad;
     private boolean MealsOnWhales;
-    private String current;
+    private String current; //same thing as name variable
     private int hours;
     private Scanner scanner;
+    private ArrayList<String> pantry;
 
     public Organization (String organization) {
         current = organization;

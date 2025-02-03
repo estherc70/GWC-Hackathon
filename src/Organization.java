@@ -2,9 +2,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Organization {
-    private boolean PlaytimeForCharity;
-    private boolean ServiceSquad;
-    private boolean MealsOnWhales;
     private ArrayList<String> pantry;
     private double hours;
     private double hoursRequired;
@@ -37,9 +34,30 @@ public class Organization {
                     System.out.println("You already donated this item to the organization before!");
                 }
             }
+            else {
+
+            }
         }
+    }
+
+    public void printInfo() {
+        System.out.println("Requirements to fulfilled: ");
+        System.out.println("Items Required");
+        System.out.println("---------------------");
+        printList();
+        System.out.println("Hours required: " + hoursRequired);
+    }
 
 
+    public void printList() {
+        int counter = 1;
+        for (int i = 0; i < itemsRequired.length; i++) {
+            System.out.println(counter + "." + itemsRequired[i]);
+        }
+    }
+
+    public double currentHour() {
+        return hours;
     }
 
 

@@ -24,11 +24,16 @@ public class Logic {
         System.out.println("Welcome to ______!");
         System.out.println("Come volunteer, donate, and make a difference in the community you are in today!");
         System.out.println();
+        System.out.print("Enter your name: ");
+        String name = scan.nextLine();
+        volunteer = new Volunteer(name);
         System.out.println("Menu");
         System.out.println("---------------------------");
         System.out.println("(L)ook for a organization to volunteer in");
+        System.out.println("(G)et item");
         System.out.println("(D)onate to an organization");
         System.out.println("(I)nfo of a organization");
+        System.out.println("(V)iew stats");
         System.out.println("(Y)our points");
         System.out.println("(S)ell item");
         System.out.print("Enter here: ");
@@ -41,6 +46,25 @@ public class Logic {
     public void processChoice() {
         if (choice.equals("l")) {
             lookForVolunteer();
+        }
+        else if (choice.equals("g")) {
+            String item = volunteer.itemGenerator();
+            System.out.println("You obtained " + item + "!");
+            volunteer.addItemToInventory(item);
+        }
+        else if (choice.equals("d")) {
+            volunteer.printInventory();
+            System.out.println("Which item would you like to donate!");
+            System.out.println("Enter here: ");
+            String item = scan.nextLine();
+            current.addItem(item);
+        }
+        else if (choice.equals("i")) {
+            current.printInfo();
+        }
+        else if (choice.equals("v")) {
+            volunteer.printInventory();
+            System.out.println("You volunteered for " + volunteer.getHours() + "!");
         }
     }
 
@@ -77,9 +101,9 @@ public class Logic {
         }
     }
 
-    public void donate() {
 
-    }
+
+
 
 }
 

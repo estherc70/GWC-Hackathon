@@ -76,17 +76,17 @@ public class Logic {
             foundOrganization = true;
             if (organizationChance >= 0.66) {
                 String[] items = {"brooms", "water", "trash bags", "rakes"};
-                current = new Organization("Prospect Park Cleanup", items, 40);
+                current = new Organization("Prospect Park Cleanup", items, 40, volunteer);
                 System.out.println("The Organization is Prospect Park Cleanup");
             }
             else if (organizationChance >= 0.33) {
                 String[] items = {"mask", "pipettes", "bandaid", "heartbeat monitor"};
-                current = new Organization("Red Cross", items, 30);
+                current = new Organization("Red Cross", items, 30, volunteer);
                 System.out.println("The Organization is Red Cross");
             }
             else {
                 String[] items = {"canned tomatoes", "pasta", "sushi", "pizza"};
-                current = new Organization("Food Bank for NYC", items, 20);
+                current = new Organization("Food Bank for NYC", items, 20, volunteer);
                 System.out.println("The Organization is Food Bank for NYC");
             }
         } else {

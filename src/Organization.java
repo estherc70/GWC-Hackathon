@@ -18,13 +18,9 @@ public class Organization {
     }
 
 
-    public void addItem(String item) {
-        String str = "";
+    public String addItem(String item) {
         for (int i = 0; i < pantry.size(); i++) {
-            if (pantry.get(i).equals(item)) {
-                str = "You already donated this item to " + organization + " before or this item is not required!";
-            } else {
-                str = "You donated " + item + " to " + organization + "!";
+            if (!pantry.get(i).equals(item)) {
                 if (organization.equals("Prospect Park Cleanup")) {
                     hours += 3;
                     volunteer.addHours(3);
@@ -35,9 +31,11 @@ public class Organization {
                     hours += 1;
                     volunteer.addHours(1);
                 }
+                return "You donated " + item + " to " + organization + "!";
             }
         }
-        System.out.println(str);
+        return "You already donated this item to " + organization + " before or this item is not required!";
+
     }
 
     public void printInfo() {

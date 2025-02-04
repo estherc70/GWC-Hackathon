@@ -88,7 +88,7 @@ public class Logic {
             System.out.println("Which item would you like to donate!");
             System.out.print("Enter here: ");
             String item = scan.nextLine();
-            current.addItem(item);
+            System.out.println(current.addItem(item));
         }
         else if (choice.equals("i")) {
             current.printInfo();

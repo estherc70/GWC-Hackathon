@@ -8,17 +8,13 @@ public class Organization {
     private double hoursRequired;
     private String[] itemsRequired;
 
-    public Organization (String organization, String[] itemsRequired) {
+    public Organization (String organization, String[] itemsRequired, int hoursRequired) {
         hours = 0;
-        hoursRequired = 0;
+        this.hoursRequired = hoursRequired;
         pantry = new ArrayList<>();
         this.itemsRequired = itemsRequired;
         this.organization = organization;
 
-    }
-
-    public void setHoursRequired(double hours) {
-        this.hours = hours;
     }
 
     public double getHours() {

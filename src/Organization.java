@@ -4,7 +4,7 @@ public class Organization {
     private ArrayList<String> pantry; //items the organization already has
     private String organization;
     private Volunteer volunteer;
-    private int hours;
+    private double hours;
     private double hoursRequired;
     private String[] itemsRequired;
 
@@ -44,14 +44,48 @@ public class Organization {
         printList();
         System.out.println("---------------------");
         System.out.println("Hours fulfilled for this organization: " + hours);
-        System.out.println("Hours required: " + hoursRequired);
+        System.out.println(Colors.RED + "Hours required: " + hoursRequired + Colors.RESET);
     }
 
 
     public void printList() {
         int counter = 1;
         for (int i = 0; i < itemsRequired.length; i++) {
-            System.out.println(counter + "." + itemsRequired[i]);
+            if (isInPantry(itemsRequired[i])) {
+                System.out.println(counter + "." + Colors.CYAN + itemsRequired[i] + Colors.RESET);
+                counter++;
+            }
+            else {
+                System.out.println(counter + "." + Colors.RED + itemsRequired[i] + Colors.RESET);
+                counter++;
+            }
+
         }
+    }
+
+    public boolean isInPantry(String item) {
+        for (String thing : pantry) {
+            if (thing.equals(item)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean allItems() {
+        for (int i = 0; i < itemsRequired.length; i++) {
+            if (!(isInPantry(itemsRequired[i]))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean completedVolunteer() {
+        return hours >= hoursRequired;
+    }
+
+    public void addHours(double hour) {
+        hours += hour;
     }
 }

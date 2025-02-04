@@ -1,17 +1,21 @@
 import java.util.ArrayList;
 
 public class Volunteer {
-    double hours;
-    String name;
-    ArrayList<String> inventory;
+    private double hours;
+    private String name;
+    private ArrayList<String> inventory;
+    private int points;
+    private ArrayList<String> wants;
 
     public Volunteer(String name) {
         this.name = name;
         hours = 0;
         inventory = new ArrayList<>();
+        wants = new ArrayList<>();
+        points = 0;
     }
 
-    public void addHours(int time) {
+    public void addHours(double time) {
         hours += hours;
     }
 
@@ -35,12 +39,12 @@ public class Volunteer {
 
     public void printInventory() {
         int counter = 1;
-        if (inventory.size() == 0) {
+        if (inventory.isEmpty()) {
             System.out.println("You have nothing in your inventory yet!");
         }
         else {
-            for (int i = 0; i < inventory.size(); i++) {
-                System.out.println(counter + "." + inventory.get(i));
+            for (String s : inventory) {
+                System.out.println(counter + "." + s);
             }
         }
 
@@ -50,8 +54,36 @@ public class Volunteer {
         return inventory.get(index);
     }
 
+    public void removeItem(String remove) {
+        for (int i = 0; i < inventory.size(); i++) {
+            if (inventory.get(i).equals(remove)) {
+                inventory.remove(i);
+            }
+        }
+    }
 
+    public void addPoint(int points) {
+        this.points += points;
+    }
 
+    public int getPoints() {
+        return points;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void addWants(String item) {
+        wants.add(item);
+    }
+
+    public void printWants() {
+        int counter = 1;
+        for(String items : wants) {
+            System.out.println(Colors.PURPLE + counter + "." + items);
+        }
+    }
 }
 
 

@@ -6,8 +6,6 @@ public class Logic {
     String choice;
     Organization current;
     boolean foundOrganization;
-    //same thing as name variable
-
 
     public Logic() {
         scan = new Scanner(System.in);
@@ -17,16 +15,22 @@ public class Logic {
     }
 
     public void run() {
-
+        welcome();
+        while (//gameOver variable needed) {
+        mainMenu();
+        processChoice();
     }
 
     public void welcome() {
-        System.out.println("Welcome to ______!");
+        System.out.println("Welcome to Service Quests for Communities!");
         System.out.println("Come volunteer, donate, and make a difference in the community you are in today!");
         System.out.println();
         System.out.print("Enter your name: ");
         String name = scan.nextLine();
         volunteer = new Volunteer(name);
+    }
+
+    public void mainMenu() {
         System.out.println("Menu");
         System.out.println("---------------------------");
         System.out.println("(L)ook for a organization to volunteer in");
@@ -40,8 +44,6 @@ public class Logic {
         choice = scan.nextLine();
         choice.toLowerCase();
     }
-
-
 
     public void processChoice() {
         if (choice.equals("l")) {
@@ -94,10 +96,5 @@ public class Logic {
             System.out.println("Try again or try looking for another organization!");
         }
     }
-
-
-
-
-
 }
 

@@ -83,7 +83,7 @@ public class Logic {
             System.out.println(Colors.CYAN + "You obtained " + item + "!" + Colors.RESET);
             volunteer.addItemToInventory(item);
         }
-        else if (choice.equals("d")) {
+        else if (choice.equals("d") && foundOrganization) {
             volunteer.printInventory();
             System.out.println("Which item would you like to donate!");
             System.out.print("Enter here: ");
@@ -116,7 +116,7 @@ public class Logic {
             volunteer.addPoint(30);
             System.out.println(Colors.YELLOW + "You just got 30 points from selling " + item + "!" + Colors.RESET);
         }
-        else if (choice.equals("w")) {
+        else if (choice.equals("w") && foundOrganization) {
             double time = volunteer();
             current.addHours(time);
             volunteer.addHours(time);

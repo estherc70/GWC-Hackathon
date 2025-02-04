@@ -23,20 +23,9 @@ public class Organization {
         for (int i = 0; i < pantry.size(); i++) {
             if (pantry.get(i).equals(item)) {
                 str = "You already donated this item to " + organization + " before or this item is not required!";
-            } else {
-                str = "You donated " + item + " to " + organization + "!";
-                if (organization.equals("Prospect Park Cleanup")) {
-                    hours += 3;
-                    volunteer.addHours(3);
-                } else if (organization.equals("Red Cross")) {
-                    hours += 2;
-                    volunteer.addHours(2);
-                } else if (organization.equals("Food Bank for NYC")) {
-                    hours += 1;
-                    volunteer.addHours(1);
-                }
             }
         }
+        str = "You donated " + item + " to " + organization;
         System.out.println(str);
     }
 

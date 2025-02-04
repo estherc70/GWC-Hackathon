@@ -7,14 +7,11 @@ public class Organization {
     private double hoursRequired;
     private String[] itemsRequired;
 
-    public Organization (String organization) {
+    public Organization (String organization, String[] itemsRequired) {
         hours = 0;
         hoursRequired = 0;
         pantry = new ArrayList<>();
-    }
-
-    public void initializeItemsRequired(String[] list) {
-        itemsRequired = list;
+        this.itemsRequired = itemsRequired;
     }
 
     public void setHoursRequired(double hours) {

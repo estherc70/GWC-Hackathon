@@ -75,25 +75,22 @@ public class Logic {
             double organizationChance = Math.random();
             foundOrganization = true;
             if (organizationChance >= 0.66) {
-                current = new Organization("Prospect Park Cleanup");
+                String[] items = {"brooms", "water", "trash bags", "rakes"};
+                current = new Organization("Prospect Park Cleanup", items);
                 System.out.println("The Organization is Prospect Park Cleanup");
                 current.setHoursRequired(40);
-                String[] items = {"brooms", "water", "trash bags", "rakes"};
-                current.initializeItemsRequired(items);
             }
             else if (organizationChance >= 0.33) {
-                current = new Organization("Red Cross");
+                String[] items = {"mask", "pipettes", "bandaid", "heartbeat monitor"};
+                current = new Organization("Red Cross", items);
                 System.out.println("The Organization is Red Cross");
                 current.setHoursRequired(30);
-                String[] items = {"mask", "pipettes", "bandaid", "heartbeat monitor"};
-                current.initializeItemsRequired(items);
             }
             else {
-                current = new Organization("Food Bank for NYC");
+                String[] items = {"canned tomatoes", "pasta", "sushi", "pizza"};
+                current = new Organization("Food Bank for NYC", items);
                 System.out.println("The Organization is Food Bank for NYC");
                 current.setHoursRequired(20);
-                String[] items = {"canned tomatoes", "pasta", "sushi", "pizza"};
-                current.initializeItemsRequired(items);
             }
         } else {
             System.out.println("The organization is currently not holding any events.");

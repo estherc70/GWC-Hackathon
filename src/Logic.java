@@ -169,7 +169,11 @@ public class Logic {
     }
 
     public boolean completedRequirements() {
-        return current.allItems() && current.completedVolunteer();
+        if (current != null) {
+            return current.allItems() && current.completedVolunteer();
+        } else {
+            return false;
+        }
     }
 
     public void printPointShop() {

@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Organization {
     private ArrayList<String> pantry; //items the organization already has
+    private String organization;
     private double hours;
     private double hoursRequired;
     private String[] itemsRequired;
@@ -12,6 +13,8 @@ public class Organization {
         hoursRequired = 0;
         pantry = new ArrayList<>();
         this.itemsRequired = itemsRequired;
+        this.organization = organization;
+
     }
 
     public void setHoursRequired(double hours) {
@@ -23,16 +26,16 @@ public class Organization {
     }
 
     public void addItem(String item) {
-        boolean hasItem = false; // if the pantry has the item
+//        boolean hasItem = false; // if the pantry has the item
         for (int i = 0; i < pantry.size(); i++) {
             if (pantry.get(i).equals(item)) {
-                System.out.println("You already donated this item to the organization before!");
+                System.out.println("You already donated this item to " + organization + " before!");
 //                hasItem = true;
 //                if (hasItem) {
 //                    System.out.println("You already donated this item to the organization before!");
 //                }
             } else {
-                System.out.println("You donated " + item + "!");
+                System.out.println("You donated " + item + " to " + organization + "!");
             }
         }
     }

@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Organization {
-    private ArrayList<String> pantry;
+    private ArrayList<String> pantry; //items the organization already has
     private double hours;
     private double hoursRequired;
     private String[] itemsRequired;
@@ -26,16 +26,16 @@ public class Organization {
     }
 
     public void addItem(String item) {
-        boolean hasItem = false;
+        boolean hasItem = false; // if the pantry has the item
         for (int i = 0; i < pantry.size(); i++) {
             if (pantry.get(i).equals(item)) {
-                hasItem = true;
-                if (hasItem) {
-                    System.out.println("You already donated this item to the organization before!");
-                }
-            }
-            else {
-
+                System.out.println("You already donated this item to the organization before!");
+//                hasItem = true;
+//                if (hasItem) {
+//                    System.out.println("You already donated this item to the organization before!");
+//                }
+            } else {
+                System.out.println("You donated " + item + "!");
             }
         }
     }

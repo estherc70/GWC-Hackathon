@@ -46,6 +46,10 @@ public class Volunteer {
 
     }
 
+    public ArrayList<String> getInventory() {
+        return inventory;
+    }
+
     public String getInventory(int index) {
         return inventory.get(index);
     }

@@ -85,10 +85,15 @@ public class Logic {
         }
         else if (choice.equals("d") && foundOrganization) {
             volunteer.printInventory();
-            System.out.println("Which item would you like to donate!");
-            System.out.print("Enter here: ");
-            String item = scan.nextLine();
-            System.out.println(current.addItem(item));
+            if (volunteer.getInventory().isEmpty()) {
+                System.out.println("Nothing to donate!");
+            } else {
+                System.out.println("Which item would you like to donate!");
+                System.out.print("Enter here: ");
+                String item = scan.nextLine();
+                System.out.println(current.addItem(item));
+
+            }
         }
         else if (choice.equals("i")) {
             current.printInfo();

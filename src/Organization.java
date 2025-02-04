@@ -18,15 +18,13 @@ public class Organization {
     }
 
 
-    public void addItem(String item) {
-        String str = "";
-        for (int i = 0; i < pantry.size(); i++) {
-            if (pantry.get(i).equals(item)) {
-                str = "You already donated this item to " + organization + " before or this item is not required!";
+    public String addItem(String item) {
+        for (int i = 0; i < itemsRequired.length; i++) {
+            if (itemsRequired[i].equals(item)) {
+                return "You donated " + item + " to " + organization;
             }
         }
-        str = "You donated " + item + " to " + organization;
-        System.out.println(str);
+        return "This item is not a required item for this organization!";
     }
 
     public void printInfo() {

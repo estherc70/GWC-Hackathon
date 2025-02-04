@@ -23,10 +23,6 @@ public class Volunteer {
         return hours;
     }
 
-    public void donate(String item, String organization) {
-
-    }
-
     public String itemGenerator() {
         String[] items = {"brooms", "water", "trash bags", "rakes", "mask", "pipettes", "bandaid", "heartbeat monitor", "canned tomatoes", "pasta", "sushi", "pizza"};
         int random = (int) (Math.random() * 11);

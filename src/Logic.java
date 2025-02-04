@@ -77,7 +77,6 @@ public class Logic {
             else {
                 lookForVolunteer();
             }
-
         }
         else if (choice.equals("g")) {
             String item = volunteer.itemGenerator();

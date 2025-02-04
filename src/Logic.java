@@ -16,7 +16,7 @@ public class Logic {
 
     public void run() {
         welcome();
-        while (//gameOver variable needed) {
+        while (/*gameOver variable needed*/) {
         mainMenu();
         processChoice();
     }
